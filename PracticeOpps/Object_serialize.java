@@ -6,21 +6,32 @@
 // Implementing Serializable Interface
 import java.io.*; 
 
-public class Object_deserialize{
+public class Object_serialize  {
+// implements Serializable {
     
     private String name; 
-    Object_deserialize(String name){
+    Object_serialize(String name){
         this.name=name; 
     }
     public static void main(String[] args){
-         try{
-            Object_deserialize obj1;
+        
+        try{
+            //  Object_serialize obj1=new Object_serialize("ProgressiveArt"); 
 
-            FileInputStream f=new FileInputStream("output.txt"); 
+            //  FileOutputStream f=new FileOutputStream("ouput.txt"); 
+            //  ObjectOutputStream oos=new ObjectOutputStream(f); 
+            //  oos.writeObject(obj1); 
+            //  oos.close(); 
+
+            //  f.close();
+            Object_serialize obj1;
+
+            FileInputStream f=new FileInputStream("PracticeOpps/ouput.txt"); 
 
             ObjectInputStream oos =new ObjectInputStream(f); 
-            obj1= (Object_serialize) oos.readObject();
+            obj1= (Object_serialize)oos.readObject();
             System.err.println(obj1 + " Here is our Deserialized Object");
+          
         }
         catch(Exception e){
             e.printStackTrace();
